@@ -1,0 +1,123 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+
+    --primary: 142 70% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 0 0% 0%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 142 70% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 142 70% 45%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 0%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 142 70% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 7%;
+    --sidebar-accent-foreground: 142 70% 45%;
+    --sidebar-border: 0 0% 15%;
+    --sidebar-ring: 142 70% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    font-size: 80%; /* Resize the entire website to 80% by default */
+  }
+
+  body {
+    @apply bg-white text-foreground;
+  }
+}
+
+/* Improved dialog/popup styling */
+.dialog-content {
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: 1.5rem;
+  width: 95%;
+  max-width: 550px;
+  transform: scale(0.85); /* Make dialogs slightly smaller */
+}
+
+.modal-container {
+  max-height: calc(100vh - 6rem);
+  overflow-y: auto;
+  padding: 0 1rem;
+  width: 90%;
+  max-width: 700px;
+  transform: scale(0.85); /* Make modal smaller */
+}
+
+.popup-form {
+  max-width: 100%;
+  width: 100%;
+  max-height: 80vh;
+  padding: 1.5rem;
+  overflow-y: auto;
+  transform: scale(0.85); /* Make popups smaller */
+}
+
+@media (min-width: 640px) {
+  .popup-form {
+    width: 90%;
+    max-width: 550px;
+  }
+}
+
+/* Fade transitions */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Card hover effects */
+.hover-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(34, 197, 94, 0.2);
+}
